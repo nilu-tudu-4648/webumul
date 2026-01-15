@@ -3,6 +3,7 @@ import Script from 'next/script';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { Navbar, Footer } from './components/layout';
+import FloatingChatbot from './components/chatbot/FloatingChatbot';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -145,6 +146,7 @@ export default function RootLayout({
         <Navbar />
         <main className="min-h-screen">{children}</main>
         <Footer />
+        <FloatingChatbot />
       </body>
     </html>
   );

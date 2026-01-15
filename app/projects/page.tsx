@@ -19,6 +19,7 @@ const projects = [
     gradient: 'from-orange-500 to-amber-500',
     featured: true,
     image: '/assets/johar11.png',
+    link: 'https://play.google.com/store/apps/details?id=com.nilesh98.johar11',
   },
   {
     title: 'Gyan Sarovar Library',
@@ -31,6 +32,7 @@ const projects = [
     gradient: 'from-blue-500 to-cyan-500',
     featured: true,
     image: '/assets/gyansarovar.png',
+    link: 'https://play.google.com/store/apps/details?id=com.gyansarovar.app',
   },
   {
     title: 'Hostel Easy',
@@ -43,6 +45,7 @@ const projects = [
     gradient: 'from-emerald-500 to-teal-500',
     featured: true,
     image: '/assets/hosteleasy.png',
+    link: "https://play.google.com/store/apps/details?id=com.nilesh98.Trip_Planner"
   },
   {
     title: 'Sayas Cooperative',
@@ -55,6 +58,7 @@ const projects = [
     gradient: 'from-violet-500 to-purple-500',
     featured: true,
     image: '/assets/sayas.png',
+    link: 'https://play.google.com/store/apps/details?id=com.sayas',
   },
   {
     title: 'LensCraft',
@@ -67,6 +71,7 @@ const projects = [
     gradient: 'from-pink-500 to-rose-500',
     featured: true,
     image: '/assets/lenscraft.png',
+    link:'https://photogallery-murex.vercel.app/'
   },
   {
     title: 'Traveze',
@@ -79,6 +84,7 @@ const projects = [
     gradient: 'from-pink-500 to-rose-500',
     featured: true,
     image: '/assets/traveze.png',
+    link: 'https://travezeapp.vercel.app/',
   },
 ];
 
@@ -122,18 +128,32 @@ export default function ProjectsPage() {
                 }`}
               >
                 {/* Visual */}
-                <div className="relative">
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} rounded-3xl opacity-20 blur-3xl`} />
-                  <div className={`relative aspect-[4/3] rounded-3xl overflow-hidden bg-[var(--background)] border border-[var(--border)]`}>
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="relative block group cursor-pointer"
+                >
+                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} rounded-3xl opacity-20 blur-3xl transition-opacity duration-300 group-hover:opacity-40`} />
+                  <div className={`relative aspect-[4/3] rounded-3xl overflow-hidden bg-[var(--background)] border border-[var(--border)] transition-all duration-300 group-hover:border-[var(--primary)] group-hover:scale-[1.02] group-hover:shadow-xl group-hover:shadow-[var(--primary)]/20`}>
                     {project.image ? (
                       <div className="relative w-full h-full p-4">
                         <Image
                           src={project.image}
                           alt={project.title}
                           fill
-                          className="object-contain"
+                          className="object-contain transition-transform duration-300 group-hover:scale-105"
                           sizes="(max-width: 768px) 100vw, 50vw"
                         />
+                        {/* Hover Overlay */}
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center rounded-3xl">
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 px-6 py-3 bg-white text-black font-semibold rounded-full flex items-center gap-2">
+                            View Project
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                            </svg>
+                          </span>
+                        </div>
                       </div>
                     ) : (
                       <div className={`relative aspect-[4/3] bg-gradient-to-br ${project.gradient} rounded-3xl p-8 flex items-center justify-center`}>
@@ -147,7 +167,7 @@ export default function ProjectsPage() {
                       </div>
                     )}
                   </div>
-                </div>
+                </a>
                 
                 {/* Content */}
                 <div>
@@ -177,7 +197,7 @@ export default function ProjectsPage() {
                   </div>
                   
                   {/* Tech */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech) => (
                       <span key={tech} className="px-3 py-1 text-xs bg-white/5 border border-[var(--border)] rounded-lg">
                         {tech}

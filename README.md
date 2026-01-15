@@ -2,7 +2,25 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then, create a `.env.local` file in the root directory and add your environment variables:
+
+```env
+# Google Gemini API Key
+# Get your free API key from: https://makersuite.google.com/app/apikey
+GEMINI_API_KEY=your_gemini_api_key_here
+
+# Cal.com Username (optional)
+# Replace with your Cal.com username for scheduling
+NEXT_PUBLIC_CAL_USERNAME=your-cal-username
+```
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -16,9 +34,24 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **AI Chatbot**: Interactive chatbot powered by Google Gemini AI
+  - Ask about projects, services, and pricing
+  - Collect user information
+  - Schedule meetings via Cal.com integration
+  - Access at `/chatbot`
+
+- **Case Studies**: Showcase of completed projects
+- **Services**: Detailed service offerings
+- **Contact**: Contact form and information
+
+## AI Chatbot Setup
+
+1. Get a free Gemini API key from [Google AI Studio](https://makersuite.google.com/app/apikey)
+2. Add it to your `.env.local` file as `GEMINI_API_KEY`
+3. (Optional) Set up Cal.com and add your username as `NEXT_PUBLIC_CAL_USERNAME`
+4. Visit `/chatbot` to use the AI assistant
 
 ## Learn More
 
@@ -32,5 +65,9 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Deploy on Vercel
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Don't forget to add your environment variables in Vercel's dashboard:
+- `GEMINI_API_KEY`
+- `NEXT_PUBLIC_CAL_USERNAME` (optional)
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
