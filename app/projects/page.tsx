@@ -68,6 +68,18 @@ const projects = [
     featured: true,
     image: '/assets/lenscraft.png',
   },
+  {
+    title: 'Traveze',
+    category: 'Travel Booking App',
+    description: 'A user-friendly app designed for travel booking.',
+    problem: 'Travelers faced challenges finding the best deals and accommodations.',
+    solution: 'Developed a travel booking platform with real-time availability, pricing, and booking features.',
+    impact: ['Increased bookings', 'Better availability', 'Improved user experience'],
+    technologies: ['Next.js', 'Tailwind CSS', 'Cloudinary', 'TypeScript'],
+    gradient: 'from-pink-500 to-rose-500',
+    featured: false,
+    image: '/assets/traveze.png',
+  },
 ];
 
 const featured = projects.filter(p => p.featured);
