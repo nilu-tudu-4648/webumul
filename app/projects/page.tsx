@@ -77,7 +77,7 @@ const projects = [
     impact: ['Increased bookings', 'Better availability', 'Improved user experience'],
     technologies: ['Next.js', 'Tailwind CSS', 'Cloudinary', 'TypeScript'],
     gradient: 'from-pink-500 to-rose-500',
-    featured: false,
+    featured: true,
     image: '/assets/traveze.png',
   },
 ];
